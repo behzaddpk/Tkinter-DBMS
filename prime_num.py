@@ -18,3 +18,24 @@ if is_prime(user_input):
     print(f"{user_input} is a prime number.")
 else:
     print(f"{user_input} is not a prime number.")
+
+
+
+
+# list of prime number
+
+def prime_list(number):
+    primes = []
+    
+    for num in range(2, number + 1):
+        is_prime = True
+        for i in range(2, int(num ** 0.5) + 1):
+            if num % i == 0:
+                is_prime = False
+                break
+        if is_prime:
+            primes.append(num)
+        
+    return primes
+        
+print(prime_list(5)) 
